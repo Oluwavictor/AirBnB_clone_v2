@@ -50,9 +50,15 @@ class FileStorage:
             pass
         
     def delete(self, obj=None):
-        """Deletes an object from __objects if it exists"""
-        if obj:
-            key = obj.__class__.__name__ + '.' + obj.id
-            if key in FileStorage.__objects:
-                del FileStorage.__objects[key]
-            self.save()
+        ''' deletes the object obj from the attribute
+            __objects if it's inside it
+        '''
+        if obj is None:
+            return
+        obj_key = obj.to_dict()['__class__'] + '.' + obj.id
+        if obj_key in self.__objects.keys():
+            del self.__objects[obj_key]
+
+    def close(self):
+        """Call the reload method"""
+        self.reload())
