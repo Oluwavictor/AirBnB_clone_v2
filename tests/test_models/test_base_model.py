@@ -30,9 +30,11 @@ class test_basemodel(unittest.TestCase):
             pass
 
     def test_init(self):
-        """Tests the initialization of the model class."""
+        """Tests the initialization of the model class.
+        """
         self.assertIsInstance(self.value(), BaseModel)
-        self.assertNotIsInstance(self.value(), sqlalchemy.ext.declarative.api.Base)
+        self.assertNotIsInstance(self.value(), Base)
+
 
 
     def test_default(self):
