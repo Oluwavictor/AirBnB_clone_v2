@@ -36,7 +36,7 @@ class BaseModel:
         else:
             for k in kwargs:
                 if k in ['created_at', 'updated_at']:
-                    setattr(self, k, datetime.fromisoformat(kwargs[k]))
+                    setattr(self, k, datetime.strptime(v, '%Y-%m-%dT%H:%M:%S.%f'))
                 elif k != '__class__':
                     setattr(self, k, kwargs[k])
             if storage_type == 'db':
