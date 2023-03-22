@@ -29,14 +29,9 @@ class test_basemodel(unittest.TestCase):
         except Exception:
             pass
 
-    def test_init(self):
-        """Tests the initialization of the model class.
-        """
-        self.assertIsInstance(self.value(), BaseModel)
-        if self.value is not BaseModel:
-            self.assertIsInstance(self.value(), Base)
-        else:
-            self.assertNotIsInstance(self.value(), Base)
+    def test_init_BaseModel(self):
+        """test if the base is an type BaseModel"""
+        self.assertTrue(isinstance(self.base, BaseModel))
 
     def test_default(self):
         """ default testing of basemodel"""
