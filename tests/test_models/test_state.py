@@ -1,19 +1,4 @@
 #!/usr/bin/python3
-""" """
-from tests.test_models.test_base_model import test_base_model
-from models.state import State
-import os
-
-
-class test_state(test_base_model):
-    """ states test class"""
-
-    def __init__(self, *args, **kwargs):
-        """ state test class init"""
-        super().__init__(*args, **kwargs)
-        self.name = "State"
-        self.value = State
-#!/usr/bin/python3
 """test for state"""
 import unittest
 import os
