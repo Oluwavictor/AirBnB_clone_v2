@@ -30,8 +30,7 @@ class test_basemodel(unittest.TestCase):
             pass
 
     def test_init(self):
-        """Tests the initialization of the model class.
-        """
+        """Tests the initialization of the model class."""
         self.assertIsInstance(self.value(), BaseModel)
         if self.value is not BaseModel:
             self.assertIsInstance(self.value(), Base)
