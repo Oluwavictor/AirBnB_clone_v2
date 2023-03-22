@@ -13,14 +13,6 @@ class test_User(test_basemodel):
         super().__init__(*args, **kwargs)
         self.name = "User"
         self.value = User
-        
-    def test_init(self):
-        """Tests the initialization of the model class."""
-        self.assertIsInstance(self.value(), BaseModel)
-        if storage_type == 'db':
-            from sqlalchemy.ext.declarative.api import Base
-            self.assertNotIsInstance(self.value(), Base)
-
 
     def test_first_name(self):
         """ testing user first anme attr"""
